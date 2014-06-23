@@ -1,0 +1,24 @@
+Default: &defaults
+  user: toriki
+  password: toriki
+  host: localhost
+  port: 5432
+  database: toriki
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: toriki_test
+  <<: *defaults
+
+Staging:
+  database: toriki_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: toriki_production
+  poolsize: 100
+  <<: *defaults
